@@ -10,6 +10,7 @@
     <style>
         .current-tab{
             background-color: rgba(219, 226, 239, 0.5);
+            padding-right:4px;
             border-radius: 4px;
         }
         .grant-location-container.active{
@@ -82,9 +83,9 @@
             <!--Grant Location page-->
             <div class="grant-location-container flex flex-col items-center hidden">
                 <img src="./Images/location.png" width="80" height="80" loading="lazy" alt="location" class="mb-4">
-                <p class="text-3xl font-semibold text-white pt-1">Grant Location Access</p>
-                <p class="font-semibold text-white pt-1" data-messageText>Allow location to get weather Information</p>
-                <button class="btn all:unset text-sm uppercase rounded bg-[#3F72AF] px-8 py-2 mt-2 text-white text-sm font-bold mb-2 mt-4" data-grantAccess>Grant Access</button>
+                <p class="text-3xl font-semibold text-white pt-1 whitespace-nowrap">Grant Location Access</p>
+                <p class="font-semibold text-white pt-1 whitespace-nowrap " data-messageText>Allow location to get weather Information</p>
+                <button class="btn all:unset text-sm uppercase rounded bg-[#3F72AF] px-8 py-2 mt-2 text-white text-sm font-bold mb-2 mt-4 whitespace-nowrap" data-grantAccess>Grant Access</button>
             </div>
             <!--Search city Form container-->
             <form class="form-container w-11/12 max-w-lg mx-auto flex justify center items-center gap-x-2 mb-3 hidden" data-searchForm>
