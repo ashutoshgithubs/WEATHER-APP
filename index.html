@@ -8,6 +8,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Weather App</title>
     <style>
+         .tabContainer {
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 4rem;
+            max-width: 550px;
+            display: flex;
+            justify-content: space-between;
+        }
         .current-tab{
             background-color: rgba(219, 226, 239, 0.5);
             background-size:cover;
@@ -49,6 +57,27 @@
             color:white;
             font-weight: 200;
         }
+         /* Apply style to all button collectively */
+        .btn {
+            all: unset;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            padding: 10px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #3F72AF;
+        }
+
+        .form-container .btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: unset;
+            border-radius: 100%;
+            background-color:#3F72AF;
+        }
         .form-container.active{
             display: flex;
         }
@@ -74,7 +103,7 @@
 <body style=" background:url(https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGdyYWRpZW50fGVufDB8fDB8fA%3D%3D&w=1000&q=80);background-size: cover; background-position: center; background-repeat: no-repeat;">
     <section class="min-h-[100vh]" >
         <p class="text-center tracking-wider text-4xl text-white font-bold uppercase pt-5 pt-4 ">WEATHER APP </p>
-        <div class="tabContainer w-11/12 max-w-lg mx-auto mt-16 flex justify-between">
+        <div class="tabContainer">
             <p data-userWeather class="cursor-pointer text-sm tracking-wide pt-1 pb-1 pl-2 pr-2 text-lg text-white whitespace-nowrap">Your Weather</p>
             <p data-searchWeather class="cursor-pointer text-sm tracking-wide pt-1 pb-1 pl-2 pr-2 text-lg text-white whitespace-nowrap">Search Weather</p>
         </div>
@@ -85,12 +114,12 @@
                 <img src="./Images/location.png" width="80" height="80" loading="lazy" alt="location" class="mb-4">
                 <p class="text-3xl font-semibold text-white pt-1 whitespace-nowrap">Grant Location Access</p>
                 <p class="font-semibold text-white pt-1 whitespace-nowrap " data-messageText>Allow location to get weather Information</p>
-                <button class="btn all:unset text-sm uppercase rounded bg-[#3F72AF] px-8 py-2 mt-2 text-white text-sm font-bold mb-2 mt-4 whitespace-nowrap" data-grantAccess>Grant Access</button>
+                <button class="btn whitespace-nowrap" data-grantAccess>Grant Access</button>
             </div>
             <!--Search city Form container-->
             <form class="form-container w-11/12 max-w-lg mx-auto flex justify center items-center gap-x-2 mb-3 hidden" data-searchForm>
                 <input placeholder="Search for City..." data-searchInput class="placeholder-white px-5 border rounded-md text-white" style="width: calc(100% - 80px);height:40px; background-color:rgba(219, 226, 239, 0.5);">
-                <button class="btn all:unset text-sm uppercase rounded-full bg-[#3F72AF] pt-1 pb-1 pl-2 pr-2 text-white text-sm font-bold mb-2 mt-1 flex justify-center items-center w-10 h-10" type="submit">
+                <button class="btn" type="submit">
                     <img src="./Images/search.png"  width="30" height="30" loading="lazy" alt="searchicon" class="p-1">
                 </button>
             </form>
@@ -137,7 +166,7 @@
             <div class="api-error-container flex flex-col items-center hidden">
                 <img src="./Images/not-found.png" width="300" height="300" alt="404" data-notFoundImg >
                 <p data-apierrortext class="text-white text-lg uppercase "></p>
-                <button class="btn text-sm uppercase rounded-full bg-[#3F72AF] pt-1 pb-1 pl-2 pr-2 text-white text-sm font-bold mb-2 mt-1 flex justify-center items-center w-10 h-10" data-apiErrorBtn>Retry</button>
+                <button class="btn" data-apiErrorBtn>Retry</button>
             </div>
         </div>
     </section>
